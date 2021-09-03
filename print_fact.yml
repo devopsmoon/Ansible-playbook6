@@ -5,3 +5,8 @@
     - name: printing the os name
       debug:
         var: ansible_distribution
+
+    - name: printing the memory free size
+      debug:
+        var: ansible_memory_mb
+
