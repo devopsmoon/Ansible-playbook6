@@ -8,6 +8,12 @@
         state: present
       when: ansible_distribution == "CentOS"
 
+    - name: updating the ubuntu server
+      apt:
+        name: update
+        state: present
+      when: ansible_distribution == "Ubuntu"
+
     - name: installing npt service on ubuntu
       apt:
         name: ntp
