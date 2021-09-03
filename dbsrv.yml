@@ -7,6 +7,11 @@
         name: mariadb-server
         state: present
 
+    - name: install python mysql-server
+      yum:
+        name: MySQL-python
+        state: present
+
     - name: starting the mariadb-server
       service:
         name: mariadb
