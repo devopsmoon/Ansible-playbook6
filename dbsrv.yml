@@ -1,0 +1,24 @@
+- name: setup mysql database server
+  hosts: dbsrv
+  become: true
+  tasks:
+    - name: install mariadb-server
+      yum:
+        name: mariadb-server
+        state: present
+
+    - name: starting the mariadb-server
+      service:
+        name: mariadb
+        state: started
+
+    - name: creating the database with accounts
+      mysql_db:
+        name: accounts
+        state: present
+
+    - name: creating the mysql user
+      mysql_user:
+        name: admin
+        password: admin123
+        priv: '".*":ALL,GRANT'
