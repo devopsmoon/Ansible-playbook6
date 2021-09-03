@@ -1,0 +1,7 @@
+- name: creating the fact variable playbook
+  hosts: web01
+  become: true
+  tasks:
+    - name: printing the os name
+      debug:
+        var: ansible_distribution
