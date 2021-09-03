@@ -10,3 +10,7 @@
       debug:
         var: ansible_memory_mb.real.free
 
+    - name: printing the processor
+      debug:
+        var: ansible_processor[2]
+
