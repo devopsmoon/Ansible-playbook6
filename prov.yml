@@ -10,9 +10,9 @@
 
     - name: updating the ubuntu server
       apt:
-        update_cache=yes
-        force_apt_get=yes
-        cache_valid_time=3600
+        update_cache: yes
+        force_apt_get: yes
+        cache_valid_time: 3600
         state: present
       when: ansible_distribution == "Ubuntu"
 
