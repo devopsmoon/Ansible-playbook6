@@ -36,10 +36,5 @@
         name: "{{item}}"
         state: present
         groups: devops
-      loop:
-        - kasim
-        - muneer
-        - sayeed
-        - rayan
-        - ayan
+      loop: "{{usernames}}"
 
