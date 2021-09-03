@@ -8,5 +8,5 @@
 
     - name: printing the memory free size
       debug:
-        var: ansible_memory_mb
+        var: ansible_memory_mb.real.free
 
