@@ -1,0 +1,27 @@
+- name: seting the packages in loop format
+  hosts: all
+  become: true
+  tasks:
+    - name: setup packages in loop
+      yum:
+        name: "{{item}}"
+        state: present
+      when: ansible_distribution == "CentOS"
+      loop:
+        - ntp
+        - git
+        - wget
+        - unzip
+        - curl
+    - name: setup packages in loop in ubuntu
+      apt:
+        name: "{{item}}"
+        update_cache: true
+        state: present
+      when: ansible_distribution == "Ubuntu"
+      loop:
+        - ntp
+        - git
+        - wget
+        - unzip
+        - curl
