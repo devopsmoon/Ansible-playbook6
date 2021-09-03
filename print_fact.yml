@@ -1,5 +1,5 @@
 - name: creating the fact variable playbook
-  hosts: web01
+  hosts: all
   become: true
   tasks:
     - name: printing the os name
