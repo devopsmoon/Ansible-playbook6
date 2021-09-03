@@ -10,7 +10,7 @@
 
     - name: installing npt service on ubuntu
       apt:
-        name: ntpd
+        name: ntp
         state: present
       when: ansible_distribution == "Ubuntu"
 
